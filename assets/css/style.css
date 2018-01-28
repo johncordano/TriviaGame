@@ -1,0 +1,43 @@
+#pattern {
+	background-image: url(../images/bodybackground.jpg);
+}
+
+#heading-row {
+	background-color: #e85f2e;
+	text-align: center;
+	padding: 20px;
+	font-size: 50px;
+	margin: 100px 200px 0px 200px;
+}
+
+#game-content {
+	background-color: #e85f2e;
+	text-align: center;
+	margin: 0px 200px 100px 200px;
+	padding: 10px 20px 200px 20px;
+}
+
+#start-button {
+	margin-top: 100px;
+	padding: 20px 40px 20px 40px;
+	font-size: 30px;
+	border: solid 2px;
+}
+
+#done-button {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 20px 40px 20px 40px;
+	font-size: 30px;
+	border: solid 2px;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+h3 {
+	font-size: 20px;
+	font-weight: bold;
+}
+
