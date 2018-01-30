@@ -1,77 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Trivia Game</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-  	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/javascript/app.js"></script>
+	<title>Oscar Movie Trivia</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style type="text/css">
+	.selected {
+		background-color: red;
+	}
+</style>
 </head>
+<body>
+	<div class="container">
+	
+		<div id="game-wrap">
+			<h2 id="timer" class="hide"></h2>
+			<h3 id="correct" class="hide"></h3>
+			<h3 id="incorrect" class="hide"></h3>
 
-<body id="pattern">
-<div class="container">
-	<div class="row" id="heading-row">
-		<h1>Movie Oscar Trivia</h1>
-	</div>
-	<div class="row" id="game-content">
-		<div id="game-start">
-			<button type="button" id="start-button">Start</button>
-		</div>
-		<div id="questions">	
-			<h2>Time Remaining in Seconds:&nbsp;<div id="stopwatchdisplay"></div></h2>
-			<br>
-			<label class="radio-inline" id="correct"><input type="radio" name="correct">Option 1</label>
-			<label class="radio-inline" id="incorrect"><input type="radio" name="incorrect">Option 2</label>
-			<label class="radio-inline" id="incorrect"><input type="radio" name="incorrect">Option 3</label> 
-			<h3> As a protest to Hollywood's portrayal of Native Americans in film, Marlon Brando declined an Academy Award for his performance in what movie?</h3>
-			<label class="checkbox-inline"><input type="checkbox" value="">The Godfather</label>xxxxxx
-			<label class="checkbox-inline"><input type="checkbox" value="">A Streetcar Named Desire</label>
-			<label class="checkbox-inline"><input type="checkbox" value="">On the Waterfront</label>
-			<label class="checkbox-inline"><input type="checkbox" value="">Last Tango in Paris</label>
-			<br><br><br>
-			<h3> Many movies have numerous nominations and win many Oscars. However, the "Big Five" Academy Award categories are Best Picture, Best Director, Best Actor, Best Actress and Best Screenplay. All of the following movies won Best Picture and Best Director. However, which one of these won the Big Five?</h3>
-			<label class="checkbox-inline"><input type="checkbox" value="">Gone With the Wind (1939)</label>
-			<label class="checkbox-inline"><input type="checkbox" value="">Titantic (1997)</label>
-			<label class="checkbox-inline"><input type="checkbox" value="">West Side Story (1961)</label>
-			<label class="checkbox-inline"><input type="checkbox" value="">One Flew Over the Cuckoo's Nest</label>
-			<br><br><br>
-			<h3> Who was the only British actor to win the Oscar for best actor during the 1980s?</h3>
-			<label class="checkbox-inline"><input type="checkbox" value="">Peter Finch</label>
-			<label class="checkbox-inline"><input type="checkbox" value="">Ben Kingsley</label>
-			<label class="checkbox-inline"><input type="checkbox" value="">Ian Holm</label>
-			<label class="checkbox-inline"><input type="checkbox" value="">Tom Wilkinson</label>
-			<br><br><br>
-			<h3> In 2007, "Dreamgirls" was nominated for eight Oscars, more than any other film that year, but did not receive a Best Picture nomination. Which of the following was the last film prior to "Dreamgirls" to lead all others in nominations without securing a best picture nod?</h3>
-			<label class="checkbox-inline"><input type="checkbox" value="">Born Yesterday</label>
-			<label class="checkbox-inline"><input type="checkbox" value="">Glory</label>
-			<label class="checkbox-inline"><input type="checkbox" value="">Fidler on the Roof</label>
-			<label class="checkbox-inline"><input type="checkbox" value="">Dreamgirls as the first.</label>
-			<br><br><br>
-			<h3>Julie Andrews picked up the Oscar for Best Actress after her first film performance. Which film did she win the award for?</h3>
-			<label class="checkbox-inline"><input type="checkbox" value="">The Sound of Music</label>
-			<label class="checkbox-inline"><input type="checkbox" value="">Camelot</label>
-			<label class="checkbox-inline"><input type="checkbox" value="">Mary Poppins</label>
-			<label class="checkbox-inline"><input type="checkbox" value="">My Fair Lady</label>
-			<br><br><br>
-			<h3>Which of these actors won the Best Actor award consecutively for two years?</h3>
-			<label class="checkbox-inline"><input type="checkbox" value="">Tom Hanks</label>
-			<label class="checkbox-inline"><input type="checkbox" value="">Geoffrey Rush</label>
-			<label class="checkbox-inline"><input type="checkbox" value="">Jeremy Irons</label>
-			<label class="checkbox-inline"><input type="checkbox" value="">Roberto Benigni</label>
-			<br><br><br>
-			<button type="button" id="done-button">Done</button>
-		</div>
-		<div id="results">
-			<h2>How'd You Do?</h2>
-			<br><br>
-			<h3>Correct Answers:&nbsp;</h3>
-			<br>
-			<h3>Incorrect Answers:&nbsp;</h3>
-			<br>
-			<h3>Unanswered Questions:&nbsp;</h3>
+			<div id="main-content">
+				<h1></h1>
+				<button id="start">Start</button>
+			</div>
 		</div>
 	</div>
-</div>
+	<script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 </html>
