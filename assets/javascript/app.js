@@ -31,24 +31,23 @@ var correct = 0;
 var incorrect = 0;
 var round = 0;
 
-// Creates the functionality to start and stop the timer to show the time change during the game.
+// Creates the functionality to show the time change (in seconds) during the game.
 function clock() {
 	gameTimer = setInterval(decrement, 1000)
 }
 
 var counter = 60;
 
+// Sets up countdown functionality for the timer and shows the time display.
 function decrement(){
-	console.log("counter",counter);
 	counter--;
 	$("#timer").text("Remaining time:" + counter);
 
+	// Stops the counter when time is up.
 	if (counter === 0) {
 		clearInterval(gameTimer)
-		console.log("out of time")
-	// Shows results at the end of the game.
+	// Shows information about the number of answered questions compared to the number of total questions and a "Game Over!" message at the end of the game. Pauses for a second before displaying this information.
 	setTimeout(function() {
-		console.log("times up!");
 		$("#main-content").empty();
 		var answered = round + "/" + triviaData.length;
 		var gameStats = $('<p>');
@@ -63,23 +62,25 @@ function decrement(){
 	
 
 
-// Sets the correct, incorrect, and time information when the document is ready.
+// Sets the correct, incorrect, and timer information when the game is ready to start.
 $(document).ready(function() {
 	$("#correct").text("Correct: " + correct);
 	$("#incorrect").text("Incorrect: " + incorrect);
 	$("#timer").text("Remaining Time: " + counter);
 
+	// When the Start button is clicked, shows the timer, correct answers, 
+	// and incorrect answers, and calls the clock function for the timer.
 	$("#start").on("click", function(){
 		$("#timer, #correct, #incorrect").removeClass("hide");
 		$("#main-content").empty();
 		clock();
-		// Loops through the TriviaData array to display questions.
+		// Loops through the TriviaData array to display the questions.
 		for (var i = 0; i < triviaData.length; i++) {
 			var questionElem = $("<h2>");
 			questionElem.addClass("question");
 			questionElem.text(triviaData[i].question);
 			$("#main-content").append(questionElem);
-			//Creates a bootstrap button group wrapper.
+			// Creates a bootstrap button group wrapper to hold the button group, and adds this wrapper div to the html.
 			var btnGrp = $("<div>");
 			btnGrp.addClass("btn-group");
 			btnGrp.attr("role", "group");
@@ -88,7 +89,7 @@ $(document).ready(function() {
 			$("#main-content").append(btnGrp);
 			// Loops through the answers array applicable to each question.
 			for (var j = 0; j < triviaData[i].choice.length; j++) {
-			// Creates a bootstrap button group.
+			// Creates bootstrap button groups in the group wrapper, and adds the button groups to the html.
 			var btnAnswer = $("<button>");
 			btnAnswer.addClass("answer btn btn-secondary");
 			btnAnswer.attr("type", "button");
@@ -101,26 +102,25 @@ $(document).ready(function() {
 		};
 	});
 
+	// When a button is clicked, assigns the button name to a button list, and loops through the list to disable the button and change it to a red color.
 	$("#main-content").on("click", ".answer", function() {
 		if(round < triviaData.length) {
 			round++
 			var btnName = $(this).attr("name");
 			var btnList = $(".btn[name= "+ "'"+ btnName +"'" +"]");
-			console.log(btnList)
 			for (var i = 0; i<btnList.length; i++) {
 				btnList[i].classList.remove("selected");
 				btnList[i].setAttribute("disabled", true);
 			}
+			// Assigns an integer to the clicked button.
 			$(this).addClass("selected");
 			var selectedBtn = parseInt($(this).val());
 			var questionIndex = parseInt($(this).attr("name"));
-			console.log(selectedBtn);
+			// Compares the answer for the clicked button to the correct answer in the object array to determine the correct and incorrect answers, and updates the display of this data.
 			if(selectedBtn === triviaData[questionIndex].answer) {
-				console.log("correct");
 				correct++
 				$("#correct").text("Correct: " + correct);
 			} else {
-				console.log("incorrect")
 				incorrect++
 				$("#incorrect").text("Incorrect: " + incorrect);
 			}
