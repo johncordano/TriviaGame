@@ -6,6 +6,6 @@ The application dynamically updates the HTML pages by using the jQuery library.
 
 Tools Used
 
-Bootstrap
-jQuery
-JavaScript
+- Bootstrap
+- jQuery
+- JavaScript
