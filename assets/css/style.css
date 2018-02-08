@@ -1,4 +1,17 @@
 
+#start {
+	text-align: center;
+	width: 50%;
+	height: 60px;
+	font-size: 30px;
+	background-color: red;
+	margin: 200px 200px 200px 200px;
+	border-radius: 12px;
+}
+
+.selected {
+	background-color: red;
+}
 
 
 
